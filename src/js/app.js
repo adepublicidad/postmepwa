@@ -46,7 +46,6 @@ if ('serviceWorker' in navigator) {
 }
 
 // Boton de Instalar
-
 const bannerInstall = document.querySelector('#banner-install');
     bannerInstall.addEventListener('click', async () => {
       if (deferredPrompt) {
