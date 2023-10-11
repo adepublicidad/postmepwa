@@ -18,7 +18,7 @@ const closePostModal = () => {
 };
 
 // Cuando se cargue todo nuestro DOM
-window.addEventListener('load', () => {
+window.addEventListener('load',  () => {
   MAIN = document.querySelector('#main');
   MODAL_POST = document.querySelector('#modal-post-section');
   BTN_SHOW_POST = document.querySelector('#btn-upload-post');
@@ -26,3 +26,14 @@ window.addEventListener('load', () => {
   BTN_CANCEL_POST = document.querySelector('#btn-post-cancel');
   BTN_CANCEL_POST.addEventListener('click', closePostModal)
 });
+
+// Registrando el SW
+
+if ('serviceWorker' in navigator) {
+    {
+    const response = navigator.serviceWorker.register('sw.js');
+    if (response) {
+      console.info('Service worker registrado');
+    }
+  }
+}
