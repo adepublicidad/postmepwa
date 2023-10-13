@@ -34,6 +34,9 @@ window.addEventListener('load',  () => {
   BTN_CANCEL_POST.addEventListener('click', closePostModal)
 });
 
+// Solicitar permiso para Notificaciones
+//Notification.requestPermission();
+
 // Registrando el SW
 
 if ('serviceWorker' in navigator) {
