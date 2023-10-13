@@ -3,11 +3,11 @@ const CACHE_FILES_CORE = [
     'src/images/icons/icon-144x144.png',
     '/manifest.webmanifest.json',
     '/src/images/computer.jpg',
-    '/favicon.ico ',
+    '/favicon.ico',
     'src/css/app.css',
     'src/js/app.js',
     'index.html',
-    '/'
+    './'
 ];
 
 const CACHE_NAME_INMUTABLE = 'inmutable-v1';
@@ -24,11 +24,11 @@ self.addEventListener('install', (event) => {
     const guardandoCache = caches.open(CACHE_NAME_CORE)
     .then(cache => {
        return cache.addAll(CACHE_FILES_CORE);
-    })
+    });
     const guardandoCache_core = caches.open(CACHE_NAME_INMUTABLE)
     .then(cache => {
        return cache.addAll(CACHE_FILES_INMUTABLE);
-    })
+    });
     self.skipWaiting();
     event.waitUntil(guardandoCache_core);
 });
